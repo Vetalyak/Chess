@@ -1,6 +1,6 @@
 project(ChessLogic)
 
-file(GLOB_RECURSE CHESSLOGIC_SRC CONFIG_DEPENDS
+file(GLOB_RECURSE CHESSLOGIC_SRC CONFIGURE_DEPENDS src
     *.cpp
     *.h
 )
