@@ -1,0 +1,40 @@
+# Build artifacts and directories
+build/
+bin/
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cbp # Code::Blocks project files
+*.o # Object files
+*.a # Archive files (static libraries)
+*.so # Shared libraries (Linux)
+*.dylib # Dynamic libraries (macOS)
+*.dll # Dynamic link libraries (Windows)
+*.exe # Executables (Windows)
+
+# IDE specific files
+.idea/ # IntelliJ IDEA / CLion
+.vscode/ # VS Code
+*.sln # Visual Studio solution files
+*.vcxproj* # Visual Studio project files
+*.suo # Visual Studio solution user options
+*.user # Visual Studio user options
+*.vcproj # Visual C++ project files
+*.ncb # Visual C++ IntelliSense database
+*.aps # Visual C++ resource script
+*.pdb # Program database files (debugging)
+*.ilk # Incremental linker files
+
+# Operating system specific files
+.DS_Store # macOS
+Thumbs.db # Windows
+ehthumbs.db # Windows
+Desktop.ini # Windows
+
+# Other temporary or generated files
+*.log
+*.tmp
+*.swp
+*~
