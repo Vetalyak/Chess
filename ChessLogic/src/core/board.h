@@ -12,6 +12,8 @@ namespace Chess {
         static const int BOARD_SIZE = 8;
         Board();
 
+        void clear();
+
         void initializeBoard();
 
         const Piece* getPieceAt(Position pos) const;

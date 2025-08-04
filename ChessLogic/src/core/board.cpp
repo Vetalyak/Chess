@@ -6,20 +6,20 @@
 using namespace Chess;
 
 Board::Board() {
-    for (int r = 0; r < BOARD_SIZE; ++r) {
-        for (int c = 0; c < BOARD_SIZE; ++c) {
-            m_squares[r][c] = nullptr;
-        }
-    }
+    clear();
     std::cout << "Board object created." << std::endl;
 }
 
-void Board::initializeBoard() {
+void Board::clear() {
     for (int r = 0; r < BOARD_SIZE; ++r) {
         for (int c = 0; c < BOARD_SIZE; ++c) {
             m_squares[r][c] = nullptr;
         }
     }
+}
+
+void Board::initializeBoard() {
+    clear();
     setPieceAt({ 0, 0 }, PieceFactory::createPiece(PieceType::Rook, Color::White));
     setPieceAt({ 0, 1 }, PieceFactory::createPiece(PieceType::Knight, Color::White));
     setPieceAt({ 0, 2 }, PieceFactory::createPiece(PieceType::Bishop, Color::White));
