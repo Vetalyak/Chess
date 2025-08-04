@@ -31,6 +31,17 @@ void Game::initializeGame() {
     std::cout << "Game initialized. White to move" << std::endl;
 }
 
+void Game::setCurrentTurn(Color color) {
+    m_currentPlayer = color;
+}
+
+void Game::setCastlingRights(bool wk, bool wq, bool bk, bool bq) {
+    this->wk = wk;
+    this->wq = wq;
+    this->bk = bk;
+    this->bq = bq;
+}
+
 std::vector<Position> Game::getValidMoves(Position from) const {
     std::vector<Position> validMoves;
 

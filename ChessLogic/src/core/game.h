@@ -31,7 +31,13 @@ namespace Chess {
 
         const Board& getBoard() const { return m_board; }
 
+        Board& getBoard() { return m_board; }
+
         Color getCurrentPlayer() const { return m_currentPlayer; }
+
+        void setCurrentTurn(Color color);
+
+        void setCastlingRights(bool wk, bool wq, bool bk, bool bq);
 
         std::vector<Position> getValidMoves(Position from) const;
 
@@ -48,6 +54,7 @@ namespace Chess {
         Color m_currentPlayer;
         LastMoveInfo m_lastMoveInfo;
 
+        bool wk, wq, bk, bq;
         bool m_whiteKingMoved;
         bool m_blackKingMoved;
         std::array<bool, 2> m_whiteRookMoved;
