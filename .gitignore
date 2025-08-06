@@ -16,6 +16,7 @@ Makefile
 
 # IDE specific files
 .idea/
+.vs/
 .vscode/
 *.sln
 *.vcxproj*
