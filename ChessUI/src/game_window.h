@@ -9,30 +9,30 @@
 
 namespace ChessUI {
 
-    class GameWindow {
-    public:
-        // Init SFML and other components
-        GameWindow(unsigned int width = 640, unsigned int height = 640, const std::string& title = "Chess");
+	class GameWindow {
+	public:
+		// Init SFML and other components
+		GameWindow(unsigned int width = 640, unsigned int height = 640, const std::string& title = "Chess");
 
-        // Main loop
-        void run();
+		// Main loop
+		void run();
 
-    private:
-        // SFML window
-        sf::RenderWindow m_window;
-        Chess::Game m_gameLogic;
-        BoardRenderer m_boardRenderer;
-        PieceRenderer m_pieceRenderer;
+	private:
+		// SFML window
+		sf::RenderWindow m_window;
+		Chess::Game m_gameLogic;
+		BoardRenderer m_boardRenderer;
+		PieceRenderer m_pieceRenderer;
 
-        // InputHandler m_inputHandler
+		// InputHandler m_inputHandler
 
-        bool m_isDragging;
-        Chess::Position m_draggedPieceStartPos;
-        const Chess::Piece* m_draggedPiece;
-        sf::Vector2f m_mouseOffset;
+		bool m_isDragging;
+		Chess::Position m_draggedPieceStartPos;
+		const Chess::Piece* m_draggedPiece;
+		sf::Vector2f m_mouseOffset;
 
-        void processEvents();
-        void update(sf::Time deltaTime);
-        void render();
-    };
+		void processEvents();
+		void update(sf::Time deltaTime);
+		void render();
+	};
 }

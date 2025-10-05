@@ -13,9 +13,9 @@
 
 namespace Chess {
 
-    class CHESSLOGIC_API PieceFactory {
-    public:
-        static std::unique_ptr<Piece> createPiece(PieceType type, Color color);
-    };
+	class CHESSLOGIC_API PieceFactory {
+	public:
+		static std::unique_ptr<Piece> createPiece(PieceType type, Color color);
+	};
 
 }

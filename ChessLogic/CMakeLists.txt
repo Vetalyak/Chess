@@ -1,8 +1,8 @@
 project(ChessLogic)
 
 file(GLOB_RECURSE CHESSLOGIC_SRC CONFIGURE_DEPENDS src
-    *.cpp
-    *.h
+	*.cpp
+	*.h
 )
 
 add_library(ChessLogic SHARED ${CHESSLOGIC_SRC})

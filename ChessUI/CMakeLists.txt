@@ -7,10 +7,15 @@ file(GLOB_RECURSE CHESSUI_SRC CONFIGURE_DEPENDS src
 
 find_package(SFML 3 REQUIRED COMPONENTS Graphics System Window)
 add_executable(ChessUI ${CHESSUI_SRC})
-target_link_libraries(ChessUI PRIVATE ChessLogic)
+target_link_libraries(ChessUI PRIVATE ChessLogic SFML::Graphics SFML::System SFML::Window)
 
-target_link_libraries(ChessUI PRIVATE SFML::Graphics SFML::System SFML::Window)
 target_include_directories(ChessUI PRIVATE ${CMAKE_SOURCE_DIR}/ChessLogic/src)
+
+if (WIN32)
+	set_target_properties(${PROJECT_NAME} PROPERTIES
+		WIN32_EXECUTABLE $<CONFIG:Release>
+	)
+endif()
 
 add_custom_command(
     TARGET ChessUI POST_BUILD

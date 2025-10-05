@@ -6,6 +6,6 @@
 
 namespace Chess {
 namespace FEN {
-    CHESSLOGIC_API void applyPosition(Game& game, const std::string& fen);
+	CHESSLOGIC_API void applyPosition(Game& game, const std::string& fen);
 }
 }
