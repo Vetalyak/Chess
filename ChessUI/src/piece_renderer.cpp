@@ -33,6 +33,7 @@ void PieceRenderer::loadPieceTextures() {
 			std::string filePath = baseTexturePath + getTexturePath(color, type);
 
 			sf::Texture texture;
+			texture.setSmooth(true);
 			if (!texture.loadFromFile(filePath)) {
 				std::cerr << "ERROR: Failed to load piece texture: " << filePath << std::endl;
 				// throw exception;
@@ -85,7 +86,6 @@ void PieceRenderer::draw(sf::RenderWindow& window) const {
 				auto it = m_pieceTextures.find(textureKey);
 				if (it != m_pieceTextures.end()) {
 					sf::Sprite sprite(it->second);
-
 					sf::Vector2f pixelPos = getPixelPosition(currentPos);
 					sprite.setPosition(pixelPos);
 
