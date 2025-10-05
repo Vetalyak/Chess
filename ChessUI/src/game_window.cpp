@@ -2,8 +2,10 @@
 
 using namespace ChessUI;
 
+const uint32_t FIXED_STYLE = sf::Style::Titlebar | sf::Style::Close;
+
 GameWindow::GameWindow(unsigned int width, unsigned int height, const std::string& title)
-	: m_window(sf::VideoMode({width, height}), title),
+	: m_window(sf::VideoMode({width, height}), title, FIXED_STYLE),
 	  m_gameLogic(),
 	  m_boardRenderer(m_gameLogic.getBoard()),
 	  m_pieceRenderer(m_gameLogic.getBoard()),
