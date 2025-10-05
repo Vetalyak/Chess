@@ -80,7 +80,7 @@ bool Game::makeMove(Position from, Position to) {
 	const Piece* pieceToMove = m_board.getPieceAt(from);
 
 	if (pieceToMove == nullptr || pieceToMove->getColor() != m_currentPlayer) {
-		std::cout << "ERROR: No piece or wrong color piece at " << from.row << "," << from.col << std::endl;
+		std::cout << "ERROR: No piece or wrong color piece at " << from.toString() << std::endl;
 		return false;
 	}
 
@@ -94,8 +94,8 @@ bool Game::makeMove(Position from, Position to) {
 	}
 
 	if (!isMoveValid) {
-		std::cout << "ERROR: Invalid move from" << from.row << "," << from.col
-			<< " to " << to.row << "," << to.col << std::endl;
+		std::cout << "ERROR: Invalid move from " << from.toString()
+			<< " to " << to.toString() << std::endl;
 		return false;
 	}
 
@@ -149,8 +149,8 @@ bool Game::makeMove(Position from, Position to) {
 	// else if (isStalemate()) { // You will need to implement isStalemate
 	//     std::cout << "Stalemate! Draw." << std::endl;
 	// }
-	std::cout << "Move made: " << from.row << "," << from.col
-		<< " to " << (int)to.row << "," << (int)to.col << std::endl;
+	std::cout << "Move made: " << from.toString()
+		<< " to " << to.toString() << std::endl;
 	return true;
 }
 
@@ -176,11 +176,11 @@ void Game::printGameState() const {
 	m_board.printBoard();
 	std::cout << "Current Player: " << (m_currentPlayer == Color::White ? "White" : "Black") << std::endl;
 	std::cout << "Last Move: "
-		<< m_lastMoveInfo.from.row << "," << m_lastMoveInfo.from.col
-		<< " to " << m_lastMoveInfo.to.row << "," << m_lastMoveInfo.to.col
+		<< m_lastMoveInfo.from.toString() << " to " 
+		<< m_lastMoveInfo.to.toString()
 		<< (m_lastMoveInfo.isPawnDoubleStep ? " (Pawn Double Step)" : "") << std::endl;
 	if (m_lastMoveInfo.isPawnDoubleStep) {
-		std::cout << "En Passant Target: " << m_lastMoveInfo.enPassantTargetSquare.row << "," << m_lastMoveInfo.enPassantTargetSquare.col << std::endl;
+		std::cout << "En Passant Target: " << m_lastMoveInfo.enPassantTargetSquare.toString() << std::endl;
 	}
 
 	std::cout << "--------------------------\n" << std::endl;

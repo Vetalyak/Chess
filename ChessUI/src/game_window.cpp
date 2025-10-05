@@ -54,7 +54,7 @@ void GameWindow::processEvents() {
 					m_mouseOffset = sf::Vector2f({ (float)mousePixelPos.x, (float)mousePixelPos.y }) - piecePixelPos;
 
 					std::cout << "Picked up " << (piece->isWhite() ? "White" : "Black") << " "
-						<< (int)piece->getType() << " from " << clickedBoardPos.row << "," << clickedBoardPos.col << std::endl;
+						<< (int)piece->getType() << " from " << clickedBoardPos.toString() << std::endl;
 
 					// TODO: highlight possible moves
 				}
@@ -70,7 +70,7 @@ void GameWindow::processEvents() {
 				sf::Vector2i mousePixelPos = mouseReleased->position;
 				Chess::Position targetBoardPos = m_pieceRenderer.getBoardPosition(mousePixelPos);
 
-				std::cout << "Released piece at " << targetBoardPos.row << "," << targetBoardPos.col << std::endl;
+				std::cout << "Released piece at " << targetBoardPos.toString() << std::endl;
 
 				if (m_gameLogic.makeMove(m_draggedPieceStartPos, targetBoardPos)) {
 					std::cout << "Move successful!" << std::endl;
